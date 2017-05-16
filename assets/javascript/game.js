@@ -1,0 +1,1 @@
+//this will be the javascript for the Hangman-Game

@@ -2,6 +2,9 @@
     box-sizing: border-box;
 }
 
+h1 	{
+
+}
 header {
 	height: 100px;
 }
@@ -13,4 +16,12 @@ header {
 #gallows, #guessInput, #buttons, #tally {
 	background-color: yellow;
 	border: 5px solid green;
+}
+
+.btn-lg {
+	color: yellow;
+}
+
+.btn-group {
+	background-color: red;
 }

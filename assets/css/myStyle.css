@@ -6,7 +6,11 @@ header {
 	height: 100px;
 }
 
-.directions	{
-	background-color: yellow;
+#directions	{
+	background-color: AliceBlue;
 }
 
+#gallows, #guessInput, #buttons, #tally {
+	background-color: yellow;
+	border: 5px solid green;
+}

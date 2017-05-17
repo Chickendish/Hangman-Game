@@ -3,7 +3,9 @@
 <head>
 	<meta charset="UTF-8">
 	<title>HangmanGame</title>
+	<!-- Why are these two links the same? -->
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js">
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	<!-- Two player game starts with gallows and dashes for the person, place or thing-->
 	<!-- Guesses result in either a matched letter or a new head, torso or limbs -->
 	<!-- Player must guess the word before all limbs are fulfilled -->
@@ -15,8 +17,14 @@
 	<header>
 		<h1>Hangman</h1>
 	</header>
-<div class="row">Here's the first row</div>
-</div>
+	<div class="row">Here's the first row</div>
+		<div class="col-xs-6">Here's the first column of the first row</div>
+		<div class="col-xs-6">Here's the second row of the first row</div>
+	</div>
+	<div class="row">Here's the second row</div>
+	<div class="col-xs-12">Here's the big column which will contain the image</div>
+	<!-- Should the container be in the column or should the column be in the container -->
+
 	
 </body>
 </html>

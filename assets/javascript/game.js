@@ -18,8 +18,8 @@ console.log(alphabet[3]);
 //Player will need to press any key to begin
 
 //random generator will pick a record in an array
-
-//Player will pick 5 letters and have three chances
+//value from the array will be represented by dashes
+//Player will pick letters to solve the puzzle
 
 
 

@@ -12,6 +12,17 @@ img.bg {
   top: 0;
   left: 0;
 }
+.letter {
+    width: 30px;
+    height: 30px;
+    border-style: solid;
+    padding: 2px;
+    float: left;
+    margin: 2px;
+  }
+  .letter-button-color {
+    color: darkcyan;
+  }
 
 title 	{
 	color: blue;

@@ -2,23 +2,31 @@
 
 window.onload = function () {
 
+//game tally
+
 var wins = 0;
 var losses = 0;
 var lives = 3;
+
+//topic arrays
 var Wrestlers = ['ric flair','hulk hogan','stone cold steve austin','andre the giant','roddy piper'];
-var Painter = ['michelangelo','titian','rafael','botticelli','giorgione','hieronymous bosch']
+var Painter = ['michelangelo','titian','rafael','botticelli','giorgione','hieronymous bosch'];
 var cities = ['new york','paris','london','osaka','toyko','mumbai','los angeles','mexico city','jakarta','lagos'];
-console.log(cities[4]);
 
-$(".Wrestlers").on("click",function() {
-	$(".Wrestlers").fadeOut(3000);
-	$
-	//console.log("in the function");
-});
-
+//game pieces
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',
         't', 'u', 'v', 'w', 'x', 'y', 'z'];
+
+// user picks a topic
+
+$(".Wrestlers").on("click",function(topic) {
+	var secretAnswer = Wrestlers[Math.floor(Math.random()*Wrestlers.length)];
+	console.log(secretAnswer);
+	$(".Wrestlers").fadeOut(3000);
+});
+
+
 
 for (var i = 0;i < alphabet.length; i++) {
 	var letterBtn = $("<button>");

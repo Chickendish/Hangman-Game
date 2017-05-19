@@ -5,6 +5,8 @@ window.onload = function () {
 var wins = 0;
 var losses = 0;
 var lives = 3;
+var cities = ['new york','paris','london','osaka','toyko','mumbai'];
+console.log(cities[4]);
 
 var alphabet = ['a', 'b', 'c', 'd', 'e', 'f', 'g', 'h',
         'i', 'j', 'k', 'l', 'm', 'n', 'o', 'p', 'q', 'r', 's',

@@ -12,33 +12,21 @@ img.bg {
   top: 0;
   left: 0;
 }
+
 .letter {
     width: 30px;
     height: 30px;
     border-style: solid;
     padding: 2px;
     float: left;
-    margin: 2px;
+    margin: 5px;
   }
   .letter-button-color {
     color: darkcyan;
   }
 
-title 	{
-	color: blue;
-}
-header {
-	width: 50%
-	height: 100px;
-	text-align: center;
-}
-
 .btn-group-justified {
 	margin-top: 15px;
-}
-
-.glyphicon-wrench {
-	margin-left: 200px;
 }
 
 #directions	{

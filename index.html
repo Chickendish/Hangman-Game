@@ -21,38 +21,33 @@
 <img src="assets/images/oldWest.jpg" class="bg">
 <div class="container">
 	<header>
-		<h1>Hangmanche</h1>
+		<h1>Hangman</h1>
 	</header>
 	<section id="directions">
 	<div class="row">
 		<div class="col-xs-6 col-md-6">
-			<p>Use the letters to solve the puzzle</p>
-			<p>Guess the person, place or thing</p>
+			<p>Pick a topic and then use the letters below to solve the puzzle!</p>
+			<p>(Guess the person, place or thing)</p>
 		</div>
 		<div class="col-xs-6 col-md-6">
 		<div class="btn-group-justified">
 			<button type="button" class=".btn btn-lg Wrestlers">Wrestlers</button>
 			<button type="button" class=".btn btn-lg Painters">Painters</button>
-			<button type="button" class=".btn btn-lg Places">Places</button>
+			<button type="button" class=".btn btn-lg Cities">World's Largest Cities</button>
 		</div>
 		</div>
 	</div>
 	</section>
 	<div class="row">
-		<div class="col-md-4">
-		</div>
-		<div class="col-md-4">
-		<div class="panel panel-default">
-  		<div class="panel-body">hiddenAnswer</div>
-		</div>
-		</div>
-		<div class="col-md-4"><p>3rd column</p></div>
-	<div class="row">
-		<div class="col-md-6">
+		<div class="col-md-12">
 		<div id="letterBox">
-			<button id = "clear">Clear</button>
 		</div>
 
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-6">
+			<button id = "clear">Clear</button>
 		</div>
 		<div class="col-md-6">
 		<section id="hangmanImage">
@@ -60,6 +55,16 @@
 		</section>
 		</div>	
 		</div>
+	<div class="row">
+		<div class="col-md-4">1st Column
+		</div>
+		<div class="col-md-4">
+		<div class="panel panel-default">
+  		<div class="panel-body"><p id="hiddenAnswer">Hidden Answer</p>
+  		</div>
+		</div>
+		</div>
+		<div class="col-md-4"><p>3rd column</p></div>
 	<!-- Should the container be in the column or should the column be in the container -->
 	</div>
 	<div class="row">Here's the fourth row

@@ -29,22 +29,3 @@ img.bg {
 	margin-top: 15px;
 }
 
-#directions	{
-	background-color: purple;
-	font-size: 20px;
-	color: white;
-	text-align: left;
-}
-
-#gallows, #guessInput, #buttons, #tally {
-	background-color: yellow;
-	border: 5px solid green;
-}
-
-.btn-lg {
-	color: yellow;
-}
-
-.btn-group {
-	background-color: red;
-}

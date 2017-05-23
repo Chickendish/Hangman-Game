@@ -89,6 +89,9 @@ $(".letter").on("click",function() {
 
 		if (secretAnswer.includes(letterGuess)) {
 			console.log("here so far");
+			for (i = 0; i < secretAnswer.length; i++) {
+				secretAnswer.charAt(i)
+			}
 		}
 
 		else {

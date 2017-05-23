@@ -72,7 +72,6 @@ $(".Cities").on("click",function() {
 
 for (var i = 0;i < alphabet.length; i++) {
 	var letterBtn = $("<button>");
-	//console.log("here this far");
 	letterBtn.addClass("letter-button letter letter-button-color");
 	letterBtn.attr("data-letter", alphabet[i]);
 	letterBtn.text(alphabet[i]);
@@ -86,7 +85,16 @@ $(".letter").on("click",function() {
 	} else {
 		// if a topic has been picked, start checking the letters
 		var letterGuess = $(this).text();
-		console.log( letterGuess );
+		console.log(letterGuess);
+
+		if (secretAnswer.includes(letterGuess)) {
+			console.log("here so far");
+		}
+
+		else {
+			losses++;
+		}
+		//if $(letterGuess == secretAnswer):
 
 		//1. compare letterGuess to secretAnswer [hint: use .includes()]
 

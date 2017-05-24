@@ -18,6 +18,8 @@ var secretAnswer
 // hold the blanks
 var blanks = [];
 
+var blanksArray = [];
+
 // create the array of blanks
 function makeBlanks() {
 	for (i=0; i<secretAnswer.length; i++) {
@@ -88,9 +90,15 @@ $(".letter").on("click",function() {
 		console.log(letterGuess);
 
 		if (secretAnswer.includes(letterGuess)) {
-			console.log("here so far");
+			console.log("That letter is in the word");
 			for (i = 0; i < secretAnswer.length; i++) {
-				secretAnswer.charAt(i)
+				s()
+
+				//turn secretAnswer into an array (new variable)
+				//make a another new array (blanksArray) []
+				//for loops - blanksArray.push("_")
+				// 1 to 1 correspondence between blanksArray and secretAnswer
+
 			}
 		}
 

@@ -12,7 +12,7 @@
 	<!-- <script src="https://ajax.googleapis.com/ajax/libs/jquerymobile/1.4.5/jquery.mobile.min.js"></script> -->
 	<script type="text/javascript" src="assets/javascript/game.js"></script>
 	<!-- Two player game starts with gallows and dashes for the person, place or thing-->
-	<!-- Guesses result in either a matched letter or a new head, torso or limbs -->
+	<!-- 6 guesses result in either a matched letter or a new head, torso or limbs -->
 	<!-- Player must guess the word before all limbs are fulfilled -->
 	<!-- Player has one chance to guess the word correctly -->
 	
@@ -20,75 +20,24 @@
 <body>
 <img src="assets/images/oldWest.jpg" class="bg">
 <div class="container">
-	<header>
-		<h1>Hangman</h1>
-	</header>
-	<section id="directions">
-	<div class="row">
-		<div class="col-xs-6 col-md-6">
-			<p>Pick a topic and then use the letters below to solve the puzzle!</p>
-			<p>(Guess the person, place or thing)</p>
-		</div>
-		<div class="col-xs-6 col-md-6">
-		<div class="btn-group-justified">
-			<button type="button" class=".btn btn-lg Wrestlers">Wrestlers</button>
-			<button type="button" class=".btn btn-lg Painters">Painters</button>
-			<button type="button" class=".btn btn-lg Cities">World's Largest Cities</button>
-		</div>
-		</div>
-	</div>
-	</section>
-	<br>
-	<br>
-	<div class="row">
-		<div class="col-md-4">1st Column
-		</div>
-		<div class="col-md-4">
-		<div class="panel panel-default">
-  		<div class="panel-body"><p id="guessInput">Hidden Answer</p>
+<div class="row">
+	<div class="col-md-12">
+		<div class="jumbotron">
+    	<h1>Hangman!</h1> 
+    	<p>Use the letters below to guess the Professional Wrestler's name and escape the hangman's noose!</p>
   		</div>
-		</div>
-		</div>
-		<div class="col-md-4"><p>3rd column</p></div>
-	<!-- Should the container be in the column or should the column be in the container -->
+	</div>	
+</div>
+<div class="row">
+	<div class="col-md-4">
+		<button class="btn-default" id="topic"><b>Pro Wrestler</b></button>
 	</div>
-	<div class="row">
-		<div class="col-md-12">
-			<div id="letterBox">
-			</div>
-		</div>
+	<div class="col-md-8">
+		<div class="well" id="letterBox">Basic Well</div>
 	</div>
-	<div class="row">
-		<div class="col-md-6">
-			<button id = "clear">Clear</button>
-		</div>
-		<div class="col-md-6">
-		<section id="hangmanImage">
-			<img class="img-repsonsive" src="assets/images/Printable-Hangman-Game.jpg">
-		</section>
-		</div>	
-		</div>
-	
-	<div class="row">Here's the fourth row
-		<div class="col-md-12"><section id="guessInput">Here's the column for the blanks
-		</section>
-		</div>
-	</div>
-	<div class="row">
-		<div class="col-xs-6 col-md-6">
-			<section id="buttons">Are there buttons here too?
-			<<button type="button" class="btn btn-primary btn-md">A</button>
-			<button type="button" class="btn btn-primary btn-md">B</button>
-			</section>
-		</div>
-		<div class="col-xs-6 col-md-6">
-			<section id="tally">Here's the tally</section>
-		</div>
-
-	</div>
-
 </div>
 
 	
+</div>	
 </body>
 </html>

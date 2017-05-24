@@ -92,7 +92,7 @@ $(".letter").on("click",function() {
 		if (secretAnswer.includes(letterGuess)) {
 			console.log("That letter is in the word");
 			for (i = 0; i < secretAnswer.length; i++) {
-				s()
+				secretAnswer.split("") = blanksArray[];
 
 				//turn secretAnswer into an array (new variable)
 				//make a another new array (blanksArray) []

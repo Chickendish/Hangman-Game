@@ -6,7 +6,7 @@ var losses = 0;
 var guessesRemaining = 6;
 
 //guess panel
-var topic = "";
+var topic;
 var secretAnswer = [];
 var blanks = [];
 
@@ -19,15 +19,35 @@ function makeBlanks() {
 	for (i=0; i<secretAnswer.length; i++) {
 		blanks[i] = "_";
 	}
-	$("#guessInput").text(blanks.join(" "));
+	$("#guessInput").html(blanks.join(" "));
 }
+
+for (var i = 0;i < alphabet.length; i++) {
+	var letterBtn = $("<button>");
+	//console.log("here this far");
+	letterBtn.addClass("letter-button letter letter-button-color");
+	letterBtn.attr("data-letter", alphabet[i]);
+	letterBtn.text(alphabet[i]);
+	$("#letterBox").append(letterBtn);
+};
 
 $("#topic").on("click", function(){
 	secretAnswer = wrestlers[Math.floor(Math.random()*wrestlers.length)];
 	console.log(secretAnswer);
-	topic = $(this).text();
+	topic = secretAnswer.split("");
+	console.log(topic);
 	makeBlanks();
 });
+
+$(".letter").on("click", function (){
+	if (topic == undefined) {
+		alert("Select a topic first!");
+	} else {
+		var letterGuess = $(this).text();
+		console.log(letterGuess);
+
+	}
+})
 
 }
 

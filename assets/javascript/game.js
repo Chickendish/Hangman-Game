@@ -15,6 +15,7 @@ var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p',
 
 var wrestlers = ['rowdy roddy piper','jimmy supafly snuka','hulk hogan','the undertaker','andre the giant','randy savage','stone cold steve austin','ric flair'];
 
+//creates a placeholder for the hidden answer
 function makeBlanks() {
 	for (i=0; i<secretAnswer.length; i++) {
 		blanks[i] = "_";
@@ -22,6 +23,7 @@ function makeBlanks() {
 	$("#guessInput").html(blanks.join(" "));
 }
 
+//creates the letter boxes 
 for (var i = 0;i < alphabet.length; i++) {
 	var letterBtn = $("<button>");
 	//console.log("here this far");
@@ -31,6 +33,8 @@ for (var i = 0;i < alphabet.length; i++) {
 	$("#letterBox").append(letterBtn);
 };
 
+//creates the secret answer and turns it into an array
+
 $("#topic").on("click", function(){
 	secretAnswer = wrestlers[Math.floor(Math.random()*wrestlers.length)];
 	console.log(secretAnswer);
@@ -39,12 +43,26 @@ $("#topic").on("click", function(){
 	makeBlanks();
 });
 
+//select letter from the populated letter boxes
+
 $(".letter").on("click", function (){
+	//alert the user if a topic isn't picked first
 	if (topic == undefined) {
 		alert("Select a topic first!");
 	} else {
 		var letterGuess = $(this).text();
 		console.log(letterGuess);
+
+		if (secretAnswer.includes(letterGuess)) {
+			
+			for (var i = 0; i < secretAnswer.length; i++) {
+				if letterGuess == topic[i]
+
+				//somehow I must replace blanks with correct letters.
+			}	
+		} else {
+			alert("That letter is not in here.");
+		}
 
 	}
 })

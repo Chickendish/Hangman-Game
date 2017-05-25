@@ -23,6 +23,21 @@ function makeBlanks() {
 	$("#guessInput").html(blanks.join(" "));
 }
 
+function checkLetter() {
+	if (secretAnswer.includes(letterGuess)) {
+		for (var i = 0; i < secretAnswer.length; i++) {
+				if (letterGuess == topic[i]) {
+
+				}
+
+				//somehow I must replace blanks with correct letters.
+			}	
+		} else {
+			alert("That letter is not in here.");
+		}
+
+}
+
 //creates the letter boxes 
 for (var i = 0;i < alphabet.length; i++) {
 	var letterBtn = $("<button>");
@@ -52,20 +67,10 @@ $(".letter").on("click", function (){
 	} else {
 		var letterGuess = $(this).text();
 		console.log(letterGuess);
-
-		if (secretAnswer.includes(letterGuess)) {
-			
-			for (var i = 0; i < secretAnswer.length; i++) {
-				if letterGuess == topic[i]
-
-				//somehow I must replace blanks with correct letters.
-			}	
-		} else {
-			alert("That letter is not in here.");
-		}
-
+		//trying a new method - making a new function and calling it here
+		checkLetter();
 	}
-})
+});
 
 }
 

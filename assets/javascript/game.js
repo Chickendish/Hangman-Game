@@ -9,6 +9,7 @@ var guessesRemaining = 6;
 var topic;
 var secretAnswer = [];
 var blanks = [];
+var letterGuess = "";
 
 //alphabet for letter boxes
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
@@ -23,20 +24,7 @@ function makeBlanks() {
 	$("#guessInput").html(blanks.join(" "));
 }
 
-function checkLetter() {
-	if (secretAnswer.includes(letterGuess)) {
-		for (var i = 0; i < secretAnswer.length; i++) {
-				if (letterGuess == topic[i]) {
 
-				}
-
-				//somehow I must replace blanks with correct letters.
-			}	
-		} else {
-			alert("That letter is not in here.");
-		}
-
-}
 
 //creates the letter boxes 
 for (var i = 0;i < alphabet.length; i++) {
@@ -55,6 +43,7 @@ $("#topic").on("click", function(){
 	console.log(secretAnswer);
 	topic = secretAnswer.split("");
 	console.log(topic);
+	return topic;
 	makeBlanks();
 });
 
@@ -71,6 +60,19 @@ $(".letter").on("click", function (){
 		checkLetter();
 	}
 });
+
+function checkLetter() {
+	if (secretAnswer.includes(letterGuess)) {
+		for (var i = 0; i < secretAnswer.length; i++) 
+			var hits = topic.indexOf()
+
+				//somehow I must replace blanks with correct letters.
+			}	
+		else {
+			alert("That letter is not in here.");
+			guessesRemaining--;
+		}
+};
 
 }
 

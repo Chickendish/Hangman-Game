@@ -43,8 +43,8 @@ $("#topic").on("click", function(){
 	console.log(secretAnswer);
 	topic = secretAnswer.split("");
 	console.log(topic);
-	return topic;
 	makeBlanks();
+	return topic;
 });
 
 //select letter from the populated letter boxes
@@ -56,23 +56,17 @@ $(".letter").on("click", function (){
 	} else {
 		var letterGuess = $(this).text();
 		console.log(letterGuess);
-		//trying a new method - making a new function and calling it here
-		checkLetter();
+		if (secretAnswer.includes(letterGuess)) {
+			for (var i = 0; topic.length; i++)
+				if (topic[i] == letterGuess) {
+					blanks[i] = letterGuess;
+				}
+		}
+		else $("#guessesTally").html()
 	}
 });
 
-function checkLetter() {
-	if (secretAnswer.includes(letterGuess)) {
-		for (var i = 0; i < secretAnswer.length; i++) 
-			var hits = topic.indexOf()
 
-				//somehow I must replace blanks with correct letters.
-			}	
-		else {
-			alert("That letter is not in here.");
-			guessesRemaining--;
-		}
-};
 
 }
 

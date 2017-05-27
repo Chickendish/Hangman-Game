@@ -1,5 +1,14 @@
 window.onload = function () {
 
+// canvas area for hangman drawing
+paper.install(window);
+paper.setup(document.getElementById('mainCanvas'));
+
+var c = Shape.Circle(200,200,50);
+c.fillColor = 'green';
+
+paper.view.draw();
+
 //tally panel
 var wins = 0;
 var losses = 0;

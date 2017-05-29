@@ -87,6 +87,8 @@ for (var i = 0;i < alphabet.length; i++) {
 // selects letter from the populated letter boxes
 	$(".letter").on("click", function() {
 		alert($(this).attr("data-letter"));
+		$(this).attr("data-letter") = letterGuess;
+		console.log(letterGuess);
 		
 	});
  // checks the letter for matches

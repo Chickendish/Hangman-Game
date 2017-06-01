@@ -1,8 +1,8 @@
 window.onload = function () {
 
 // canvas area for hangman drawing
-paper.install(window);
-paper.setup(document.getElementById('mainCanvas'));
+//paper.install(window);
+//paper.setup(document.getElementById('mainCanvas'));
 
 // var c;
 // for(var x=25; x<400; x+=50){
@@ -12,21 +12,21 @@ paper.setup(document.getElementById('mainCanvas'));
 // 	}
 // };
 
-var c = Shape.Circle(200,200,80);
-c.fillColor = 'black';
-var text = new PointText(200,200);
-text.justification = 'center';
-text.fillColor = 'white';
-text.fontSize = 20;
-text.content = 'hello world';
+// var c = Shape.Circle(200,200,80);
+// c.fillColor = 'black';
+// var text = new PointText(200,200);
+// text.justification = 'center';
+// text.fillColor = 'white';
+// text.fontSize = 20;
+// text.content = 'hello world';
 
-var tool = new Tool();
- tool.onMouseDown = function(event) {
- 	var c = Shape.Circle(event.point.x, event.point.y, 20);
- 	c.fillColor = 'green';
- };
+// var tool = new Tool();
+//  tool.onMouseDown = function(event) {
+//  	var c = Shape.Circle(event.point.x, event.point.y, 20);
+//  	c.fillColor = 'green';
+//  };
 
-paper.view.draw();
+// paper.view.draw();
 
 //tally panel
 var wins = 0;
@@ -34,18 +34,22 @@ var losses = 0;
 var guessesRemaining = 6;
 
 //guess panel
-var secretAnswer = "";
+var currentAnswer = "";
 var lettersInSecretAnswer = [];
-var numBlanks = 0;
-var blanksAndLetters = [];
+//var blanksAndLetters = [];
 var blanks = [];
-var letterGuess = "";
+var currentGuess = "";
 
 //alphabet for letter boxes
 var alphabet = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 // wrestlers available for secret answer
 var wrestlers = ['rowdy roddy piper','jimmy supafly snuka','hulk hogan','the undertaker','andre the giant','randy savage','stone cold steve austin','ric flair'];
 //set the guesses remaining to 6
+
+
+function dropSpaces(str){
+    return str.split(' ').join('').split(""); 
+}
 
 function startGame() {
 	$("#guessesRemaining; ").text(0);
@@ -56,17 +60,14 @@ function startGame() {
 }
 
 // //creates a placeholder for the hidden answer
-function makeBlanks() {
- 	for (i=0; i<numBlanks; i++) {
- 		blanks[i] = "_";
+function makeBlanks(str) {
+	var chars = dropSpaces(str);
+	var aBlanks = [];
+ 	for (i=0; i<chars.length; i++) {
+ 		aBlanks[i] = "_";
  	}
- 	$("#guessInput").html(blanks.join(" "));
+ 	$("#guessInput").html(aBlanks.join(" "));
  }
-
- function checkGuess(letterGuess) {
- 	if ()
- }
-
 
 // //creates the letter boxes 
 for (var i = 0;i < alphabet.length; i++) {
@@ -80,20 +81,44 @@ for (var i = 0;i < alphabet.length; i++) {
 
 // //creates the secret answer and turns it into an array
  	$("#topic").on("click", function(){
-  	secretAnswer = wrestlers[Math.floor(Math.random()*wrestlers.length)];
-  	console.log(secretAnswer);
-  	lettersInSecretAnswer = secretAnswer.split("");
- 	numBlanks = lettersInSecretAnswer.length;
- 	console.log(lettersInSecretAnswer);
-  	makeBlanks();
+  	currentAnswer = wrestlers[Math.floor(Math.random()*wrestlers.length)];
+  // 	console.log(currentAnswer);
+  // 	dropSpaces(currentAnswer);
+ 	// //numBlanks = lettersInSecretAnswer.length;
+ 	// console.log(lettersInSecretAnswer);
+  	makeBlanks(currentAnswer);
   });
 
-// selects letter from the populated letter boxes
+//selects letter from the populated letter boxes
 	$(".letter").on("click", function() {
 		var letterGuess = $(this).attr("data-letter");
 		console.log(letterGuess);
-		checkMatch();
+		$(this).hide();
+		checkMatch(currentAnswer, letterGuess);
 	});
+
+// After the letter is selected, determine if the letter is in the secret answer
+// otherwise deduct from the guesses remaining tally
+	function checkMatch(ans, lett) {
+ 	if (ans.includes(lett)){
+ 		replaceBlanks(ans, lett);
+ 	} else {
+ 		$("#guessInput").html(guessesRemaining--);
+ 	}
+ }
+
+ 	function replaceBlanks(ans, lett) {
+ 		var rChars = dropSpaces(ans);
+ 		var rBlanks = [];
+ 	for (i=0; i<rChars.length; i++) {
+ 		if (lett === rChars[i] ) {
+ 				rBlanks[i] = lett;
+ 			} else {
+ 				rBlanks[i] = "_";
+ 			}
+ 	}
+ 	$("#guessInput").html(rBlanks.join(" "));
+ 	}
  // checks the letter for matches
 // 		var letterGuess = $(this).text();
 // 		console.log(letterGuess);
@@ -105,7 +130,7 @@ for (var i = 0;i < alphabet.length; i++) {
 // 		}
 // 		else $("#guessesTally").html()
 // 	}
-// });
+// })
 
 
 

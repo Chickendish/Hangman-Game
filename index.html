@@ -16,17 +16,18 @@
 <img src="assets/images/oldWest.jpg" class="bg">
 <div class="container">
 <div class="row">
+	<!-- need to get better understanding of sizing -->
 	<div class="col-md-12">
 		<div class="jumbotron">
     	<h1>Hangman!</h1> 
-    	<p>Use the letters below to guess the Professional Wrestler's name and escape the hangman's noose!</p>
+    	<p id="instructions">Use the letters below to guess the Professional Wrestler's name and escape the hangman's noose!</p>
   		</div>
 	</div>	
 </div>
 <div class="row">
 	<div class="col-md-12">
 		<div class="panel panel-default">
-		<div class="panel-heading">Click on the following letters:</div>
+		<div class="panel-heading"><h2>Click on the following letters:</h2></div>
   		<div class="panel-body"><span id="letterBox"></span>
   		</div>
 		</div>
@@ -35,7 +36,7 @@
 </div>
 <div class="row">
 	<div class="col-md-4">
-		<button class="btn-default Wrestlers" id="topic"><b>Pro Wrestler</b></button>
+		<button class="btn-default Wrestlers" id="wrestlers"><b>Pro Wrestler</b></button>
 	</div>
 	<div class="col-md-8">
 		<div class="well"><span id="guessInput"></span>

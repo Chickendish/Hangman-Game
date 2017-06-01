@@ -36,7 +36,7 @@ var guessesRemaining = 6;
 //guess panel
 var currentAnswer = "";
 var lettersInSecretAnswer = [];
-//var blanksAndLetters = [];
+var userGuesses = [];
 var blanks = [];
 var currentGuess = "";
 
@@ -52,6 +52,8 @@ function dropSpaces(str){
 }
 
 function startGame() {
+
+	// use var wins here 
 	$("#guessesRemaining; ").text(0);
 	// set the wins span
 	$("#wins").text("Wins: 0");
@@ -79,8 +81,8 @@ for (var i = 0;i < alphabet.length; i++) {
  	$("#letterBox").append(letterBtn);
  };
 
-// //creates the secret answer and turns it into an array
- 	$("#topic").on("click", function(){
+// //(1) creates the secret answer and turns it into an array
+ 	$("#wrestlers").on("click", function(){
   	currentAnswer = wrestlers[Math.floor(Math.random()*wrestlers.length)];
   // 	console.log(currentAnswer);
   // 	dropSpaces(currentAnswer);
@@ -93,6 +95,8 @@ for (var i = 0;i < alphabet.length; i++) {
 	$(".letter").on("click", function() {
 		var letterGuess = $(this).attr("data-letter");
 		console.log(letterGuess);
+		userGuesses.push(letterGuess);
+		console.log(userGuesses);
 		$(this).hide();
 		checkMatch(currentAnswer, letterGuess);
 	});
@@ -106,6 +110,12 @@ for (var i = 0;i < alphabet.length; i++) {
  		$("#guessInput").html(guessesRemaining--);
  	}
  }
+
+ 	function checkGuesses(ans, guesses) {
+ 		for (i=0; i<guesses.length; i++) {
+ 			checkMatch(ans, guesses[i])
+ 		}
+ 	}
 
  	function replaceBlanks(ans, lett) {
  		var rChars = dropSpaces(ans);
@@ -131,6 +141,31 @@ for (var i = 0;i < alphabet.length; i++) {
 // 		else $("#guessesTally").html()
 // 	}
 // })
+
+
+/* the game code should reflect that once either all of the guesses are gone
+the player either wins or loses the round. Is this a do-while loop? While (guesses != 0) 
+every round starts with 6 guesses and declines on incorrect guesses (guesses--)but the loop can be broken if player correctly guesses all 
+the letters (wins++).
+LetterBtns are created .on(load) -- these are the elements that will be used for anchoring css 
+and js files
+
+(1) Player initiates game by .on("click", function(wrestler)){ ...} hasTopic=false; (if / else)
+selected string element from array wrestlers[] becomes current answer - corresponding number of blanks populates 
+
+(2) Player selects #letterBtn and this initiates the round loop
+if the letter === true the player advances to the next round else loses a guess
+the loop can be broken if the player correctly uses all of the letters or guessesRemaining = 0
+losing the round
+
+	letterBtn data-letter is captured and used for evaluation
+	if (true === letter is included in secret answer) repopulate the element with the mix 
+	of blanks and selected letters
+	need to compare letter against a static (global) array initially represented by blanks
+	if there are spaces in the global array the corresponding index in the blanks array must 
+	also contain spaces in the representation
+	the element is populated with blanks, not the array - the array never changes
+	
 
 
 

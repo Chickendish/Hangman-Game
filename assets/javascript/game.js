@@ -63,6 +63,10 @@ function makeBlanks() {
  	$("#guessInput").html(blanks.join(" "));
  }
 
+ function checkGuess(letterGuess) {
+ 	if ()
+ }
+
 
 // //creates the letter boxes 
 for (var i = 0;i < alphabet.length; i++) {
@@ -86,10 +90,9 @@ for (var i = 0;i < alphabet.length; i++) {
 
 // selects letter from the populated letter boxes
 	$(".letter").on("click", function() {
-		alert($(this).attr("data-letter"));
-		$(this).attr("data-letter") = letterGuess;
+		var letterGuess = $(this).attr("data-letter");
 		console.log(letterGuess);
-		
+		checkMatch();
 	});
  // checks the letter for matches
 // 		var letterGuess = $(this).text();
